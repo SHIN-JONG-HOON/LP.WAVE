@@ -1,0 +1,23 @@
+  @font-face {   /*Rix열정도체*/ 
+    font-family: 'RixYeoljeongdo_Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2102-01@1.0/RixYeoljeongdo_Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+  @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap');
+  * { 
+    margin: 0; padding: 0; box-sizing: border-box; 
+    font-family: 'RixYeoljeongdo_Regular';
+  }
+  a { text-decoration: none; color:#000}
+  ul li { list-style: none; }
+  body, html {
+    overflow-x:hidden;
+    overflow-y:scroll;
+  }
+  html, body {    scroll-behavior: smooth;   }
+  body::-webkit-scrollbar {display: none;}
+  
+  .img-box > img {    width: 100%;   display: block;    }
+  .img-box > a img {    width: 100%;    display: block;    }
+  /* @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap'); */

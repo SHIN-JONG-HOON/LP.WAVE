@@ -1,0 +1,371 @@
+
+/* -------------------------------------------------------------------------------------------------------------- */
+
+.wave {
+  overflow-x:hidden;
+  overflow-y:scroll;
+  /* font-family: 'Montserrat', sans-serif; */
+  font-family: 'RixYeoljeongdo_Regular';
+  font-size:90px;
+}
+.scrollDist{
+  width:100%;  height:200%;
+  position:absolute;
+  z-index: -99;
+}
+svg {
+  position:fixed;
+  z-index: -99;
+  background: #182645;
+}
+.listener {
+  position:fixed;
+  z-index: -99;
+  background: #182645;
+}
+/* #txt1 rect {
+  fill: url(#MyGradient);
+  transform: translate(-50%,-50%);
+} */
+/* ---------------------------------------------------------------------- */
+header {
+  width: 100%; 
+  position: fixed;
+  display: flex;
+  z-index: 100;
+}
+/* ---------------------------------------------------------------------- */
+#toggle {
+  position: absolute;
+  top: 2.5rem; left: 3rem;
+  width: 50px;   height: 50px;
+  cursor: pointer;
+  z-index: 100;
+}
+#toggle .bar,
+#toggle .bar:before,
+#toggle .bar:after {
+  width: 100%;    height: 5px;
+  background: #333;
+  border-radius: 20px;
+}
+#toggle .bar {
+  position: relative;     top: 50%;
+  transition: all 0.1s 0.1s ease;
+}
+#toggle .bar:before {
+  content: " ";
+  position: absolute;    bottom: 13px;
+  transition: bottom 0.1s 0.2s ease, transform 0.3s ease;
+}
+ #toggle .bar:after {
+  content: " ";
+  position: absolute;    top: 13px;
+  transition: top 0.1s 0.2s ease, transform 0.3s ease;
+}
+/* ---------------------------------------------------------------------- */
+/*addClass animation */
+#toggle .bar.animate {    background: transparent;}
+#toggle .bar.animate:after {
+  top: 0;
+  transform: rotate(45deg);
+  transition: top 0.1s ease, transform 0.1s 0.2s ease;
+}
+#toggle .bar.animate:before {
+  bottom: 0;
+  transform: rotate(-45deg);
+  transition: bottom 0.1s ease, transform 0.1s 0.2s ease;
+}
+/* ---------------------------------------------------------------------- */
+@media (min-width: 650px) {
+  nav {    padding: 5vmin;  }
+}
+
+/*배경*/
+nav {
+    z-index: 99;
+    position: fixed;
+    top:0;  left: -50%;
+    width: 40%; height: 100%;
+    
+    background: #fff;
+    transition: all 0.4s ease-out;
+    box-shadow: 0 0 70px rgba(0, 0, 0, 0.397);
+}
+nav.overlay  {
+    position: fixed;
+    top:0; left:0;
+    transition: all 0.3s ease;
+}
+#overlay {
+  width: 100%; height: 100%;
+}
+/* ---------------------------------------------------------------------- */
+/*요소들*/
+#overlay ul {
+    width: 100%; height: 50%;
+}
+#overlay ul li {
+    position: relative;
+    top: 25%; left: 35%;
+    transform: translateX(-50%);
+    width: 50%; height: 22%;
+    padding: 20px;
+    cursor: pointer;
+/*   border: 1px solid black; */
+}
+#overlay ul li a {
+    position: relative;
+    display: inline-block;
+    font-size: 80px;
+    font-weight: bold;
+}
+#overlay ul li:nth-child(5) {margin-top: 100px;}
+#overlay ul li:nth-child(5),
+#overlay ul li:last-child {  height: 15%;   }
+#overlay ul li:nth-child(5) a,
+#overlay ul li:last-child a {  font-size: 50px;   }
+/* ---------------------------------------------------------------------- */
+/* ---------------------------------------------------------------------- */
+#overlay ul li a:after {
+  content: " ";
+  position: absolute;
+  left: 0;   bottom: 0;
+  width: 0;  height: 3px;
+  opacity: 0;
+  background: #00ff8e;
+  transition: all 0.6s 0s ease;
+}
+#overlay ul li a:hover:after {  width: 100%;  opacity: 1;  }
+#overlay ul li a:hover {  color: #888888;   }
+/* ---------------------------------------------------------------------- */
+
+/* ---------------------------------------------------------------------- */
+/*addClass .overlay*/
+nav.overlay {  min-width: 30rem;  }
+nav.overlay #overlay ul {  transition: all 0.5s ease; }
+/*nav.overlay #overlay ul li {  animation: showList 0.5s ease;  }*/
+nav.overlay #overlay ul li a {      animation: showList 0.5s ease;}
+/* ---------------------------------------------------------------------- */
+
+/* ---------------------------------------------------------------------- */
+.music-container {
+  z-index: 97;
+  /* background-color: #fff; */
+  position: fixed;
+  width: 70px; height: 70px;
+  top: 2.5rem; right: 3rem;
+  display: flex;
+  align-items: center;
+  transition: 0.5s ease;
+}
+.mask {
+  width: 200px; height: 150px;
+  background: #f1dfdd;
+  position: absolute;
+  right: -70px; top: 0px;
+  z-index: 97;
+}
+.navigation {
+  /* 버튼 */
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 300px; height: 70px;
+ 
+  border-radius: 20px;
+  background-color: #fff;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.445);
+  z-index: 100;
+
+  position: absolute;
+  left: 0;
+  overflow: hidden;
+  transition:all 0.5s ease;
+  opacity: 0;
+}
+.navigation.play {
+  left: -320px;
+  opacity: 1;
+}
+.btn {
+  width: 50%; height: 100%;
+  display: flex;
+  justify-content: center;
+  margin-left: -20px;
+}
+.action-btn {
+  background-color: #fff;
+  border: 0;
+  color: #dfdbdf;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 15px;  margin: 0 2px;
+}
+.action-btn-big {
+  color: #cdc2d0;
+  font-size: 22px;
+  margin-left: 6px;
+}
+.action-btn:focus {  outline: 0;  }
+
+.music-info {
+  width: 30%;
+  background-color: rgba(255,255,255,0.5);
+  border-right: 1px solid rgba(37, 33, 32, 0.7);
+  margin-left: 15px;
+  padding-right: 20px;
+  z-index: 100;
+}
+.title {
+  background-color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 14px;
+  font-weight: bold;
+  z-index: 98;
+}
+
+/* ---------------------------------------------------------------------- */
+.img-container {
+  position: absolute;
+  width: 70px; height: 70px;
+  top: 2.5rem; right: 3rem;
+  z-index: 97;
+  border-radius: 10px;
+  background:#182645;
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.603),
+                    0 5px 10px rgba(0, 0, 0, 0.445);
+  cursor: pointer;
+}
+
+.mask.shadow {
+  box-shadow: 0 -10px 10px rgba(9, 9, 9, 0.098);   
+}
+
+.img-container::after {
+  content: '';
+  background-color: #fff;
+  width: 13px;  height: 13px;
+  position: absolute;
+  top:50%; left: 50%;
+  border-radius: 50%;
+  transform: translate(-50%,-50%);
+}
+.img-container img {
+  position: absolute;
+  width: inherit;  height: inherit;
+  object-fit: cover;
+  border-radius: 50%;
+  animation: rotate 3s linear infinite;
+  animation-play-state: paused;
+}
+.img-container img {
+  animation-play-state: running;
+}
+/* ---------------------------------------------------------------------- */
+/* ---------------------------------------------------------------------- */
+
+
+/* ---------------------------------------------------------------------- */
+#lightBox  {
+  z-index: 98;
+  display: none;
+  position: fixed;
+  left:0; top:0;
+  width: 100%; height: 100%; 
+  background-color: rgba(224, 221, 209, 0.7);
+  transition: all 0.3s ease, max-height 0s 0.6s ease;
+}
+
+/* ---------------------------------------------------------------------- */
+section{ display: none; }
+/* ---------------------------------------------------------------------- */
+/* .container01 {} */
+h1 { 
+  font: bold 70px RixYeoljeongdo_Regular ;
+  position: fixed;
+  top: 100px; left: 50%; 
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 1000px;
+  text-align: center;
+}
+.wrap {
+  position: fixed;
+  top: 250px;
+  width: 300%;  height: 500px;
+  z-index: 99;
+  /* background: rosybrown; */
+}
+.inner {
+  width: 100%; height: 100%;
+  display: flex;
+  /* justify-content: space-around; */
+  align-items: center;
+}
+.content {
+  position: relative;
+  min-width: 20rem; 
+  min-height: 35vh; max-height: 30vh;
+  width: 25rem;   
+  margin-left: 3rem;
+  border-radius: 15px;
+  /* overflow: hidden; */
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.content:hover {  transform: translateY(-10%);  } 
+.content:hover .thumb {
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.171), 
+              0px 0px 50px rgba(0, 0, 0, 0.2);   
+}
+.thumb {
+  position: absolute;
+  /* padding: 1rem; */
+  border-radius: 4px;
+  width: 100%; 
+}
+.thumb::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(
+    to right, rgba(245, 70, 66, 0.75),
+              rgba(8, 83, 156, 0.75)
+  );
+  border-radius: 50%;
+  z-index: -1;
+  transition:all 0.3s ease-out;
+}
+.content:hover .thumb::after {
+  transform: translateY(20%);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width:760px){
+  #mydiv { /*드레그*/
+    position: fixed;
+    width: 80px; height: 80px;
+    z-index:9;
+  }
+  #mydivheader {
+    width:100%; height:100%;
+    padding: 10px; cursor: move;
+    z-index:10;
+    background-color: #2196f3;
+    border-radius: 20px;
+  }
+}

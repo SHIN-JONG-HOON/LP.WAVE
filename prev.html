@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/prev.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+          integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script defer src="js/jquery-3.6.0.min.js"></script>
+    <script defer src='https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js'></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/gsap.min.js"
+    integrity="sha512-2fk3Q4NXPYAqIha0glLZ2nluueK43aNoxvijPf53+DgL7UW9mkN+uXc1aEmnZdkkZVvtJZltpRt+JqTWc3TS3Q=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script defer src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/ScrollToPlugin3.min.js'></script>
+    <script defer src="js/prev.js"></script>
+    <title>Welcome to LP.Wave</title>
+    
+</head>
+<body>
+  <div id="audio_wrap">
+    <div id="audiobox"></div>
+  </div>
+  <header id="header">
+    <h1 class="hidden"></h1>
+    
+    <div id="header_wrap">
+      <div id="bar">
+        <a href="#" class="hbtn">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </a>
+      </div>
+      <div id="back_btn"><i class="fas fa-arrow-circle-left"></i> Back</div>
+      <nav>
+        <ul id="menu">
+          <li><a href="index.html">LP. Wave</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="prev.html">Album Preview</a></li>
+          <li><t href="#">Event</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+ </header>
+  <div id="overlay"></div>
+  <main>
+    <p>Album Preview</p>
+    <div id="content">
+      <div class="thumb_box">
+        <a href="#">
+          <div class="thumb" >
+            <img src="img/1.jpg" alt="">
+            <div class="lp">
+              <img src="img/lp.png" alt="">
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="thumb_box">
+        <a href="#">
+          <div class="thumb" >
+            <img src="img/2.jpg" alt="">
+            <div class="lp">
+              <img src="img/lp.png" alt="">
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="thumb_box">
+        <a href="#">
+          <div class="thumb" >
+            <img src="img/3.jpg" alt="">
+            <div class="lp">
+              <img src="img/lp.png" alt="">
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="thumb_box">
+        <a href="#">
+          <div class="thumb" >
+            <img src="img/4.jpg" alt="">
+            <div class="lp">
+              <img src="img/lp.png" alt="">
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="thumb_box">
+        <a href="#">
+          <div class="thumb" >
+            <img src="img/5.jpg" alt="">
+            <div class="lp">
+              <img src="img/lp.png" alt="">
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="thumb_box">
+        <a href="#">
+          <div class="thumb" >
+            <img src="img/6.jpg" alt="">
+            <div class="lp">
+              <img src="img/lp.png" alt="">
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="thumb_box">
+        <a href="#">
+          <div class="thumb" >
+            <img src="img/7.jpg" alt="">
+            <div class="lp">
+              <img src="img/lp.png" alt="">
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="thumb_box">
+        <a href="#">
+          <div class="thumb" >
+            <img src="img/8.jpg" alt="">
+            <div class="lp">
+              <img src="img/lp.png" alt="">
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="thumb_box">
+        <a href="#">
+          <div class="thumb" >
+            <img src="img/9.jpg" alt="">
+            <div class="lp">
+              <img src="img/lp.png" alt="">
+            </div>
+          </div>
+        </a>
+      </div>
+  </main>
+  <div id="prev_box">
+    <div id="thumb_sm"><img src="./img/1.jpg" alt=""></div>
+    <ul class="album_desc">Elvis PRESLEY
+      <li>Duration 25:38</li>
+      <li>8 Tracks</li>
+      <li>1970. 5. 28</li>
+    </ul>
+  </div>
+  <div class="scrollDist">
+    <ul id="playlist">
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+      <li>5</li>
+      <li>6</li>
+      <li>7</li>
+      <li>8</li>
+      <li>9</li>
+      <li>10</li>
+      <li>11</li>
+      <li>12</li>
+      <li>13</li>
+      <li>14</li>
+      <li>15</li>
+    </ul>
+  </div>
+  <svg class="container">
+    <defs>
+      <mask id="m"></mask>
+    <!-- <g id="txt2">
+      <rect width="750" height="120" fill="none" />
+      <text class="txt2" x="0" y="0" stroke="#fff">Enjoy LP. Wave</text>
+    </g> -->
+
+    <!-- <g id="txt1">    
+      <rect width="750" height="120" fill="none" />    
+      <text class="txt1" x="107" y="0" fill="#000" letter-spacing="0.15">LP. Wave</text>
+    </g> -->
+    </defs>
+      
+    <use xlink:href="#txt2" x="50%" y="50%" transform="translate(-375 0)" />
+    
+    <g mask="url(#m)">
+      <rect fill="#fff" width="100%" height="100%" />
+      <use xlink:href="#txt1" x="50%" y="50%" transform="translate(-375 0)" />
+    </g>
+  </svg>
+</body>
+</html>
